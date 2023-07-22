@@ -1,0 +1,89 @@
+# =============== #
+# Backup #
+# =============== #
+[Aa]ssets[Bb]ackup
+
+# =============== #
+# Unity generated #
+# =============== #
+UnityGenerated/
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Ll]ogs/
+[Uu]ser[Ss]ettings
+
+# =============== #
+# FMOD Studio #
+# =============== #
+[Ff][Mm]od[Ss]tudio/*/.cache/
+[Ff][Mm]od[Ss]tudio/*/.user/
+![Aa]ssets/Plugins/FMOD/**/lib/*
+![Aa]ssets/Gizmos/FMOD/*
+![Aa]ssets/Editor Default Resources/FMOD/*
+[Aa]ssets/Plugins/FMOD/Cache/*
+[Aa]ssets/StreamingAssets/**/*.bank
+[Aa]ssets/StreamingAssets/**/*.bank.meta
+fmod_editor.log
+*.bundle text eol=lf
+
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+ExportedObj/
+*.svds
+*.suo
+*.user
+*.booproj
+
+# ============ #
+# OS generated #
+# ============ #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+.gradle/
+.idea/
+.consulo/
+.vs
+
+
+# Ignore the following file extensions
+*.DS_Store
+*.s
+
+*.csproj
+*.unityproj
+ios-dev
+us_ios
+*.apk
+Assembly-CSharp-Editor-vs.csproj
+Assembly-CSharp-Editor.csproj
+Assembly-CSharp-firstpass-vs.csproj
+Assembly-CSharp-firstpass.csproj
+Assembly-CSharp-vs.csproj
+Assembly-CSharp.csproj
+Assembly-UnityScript-Editor-vs.unityproj
+Assembly-UnityScript-Editor.unityproj
+Assembly-UnityScript-firstpass-vs.unityproj
+Assembly-UnityScript-firstpass.unityproj
+Assembly-UnityScript-vs.unityproj
+Assembly-UnityScript.unityproj
+*.sln
+*.iml
+*.userprefs
+devBuild
+iosBuild
+Assets/Logs
+Logs.meta
+Bundles
+.consulo
+Logs
+webGL
+*.pyc
+Documents

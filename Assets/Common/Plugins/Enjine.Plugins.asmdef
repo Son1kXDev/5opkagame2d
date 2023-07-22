@@ -1,0 +1,16 @@
+{
+    "name": "Common.Plugins",
+    "rootNamespace": "",
+    "references": [
+        "GUID:562fc58ad9c15874bbb465f6f1ead628"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

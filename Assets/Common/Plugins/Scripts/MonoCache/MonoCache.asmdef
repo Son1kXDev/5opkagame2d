@@ -1,0 +1,17 @@
+{
+    "name": "Common.Plugins.MonoCache",
+    "rootNamespace": "",
+    "references": [
+        "GUID:562fc58ad9c15874bbb465f6f1ead628",
+        "GUID:abc30f71a829b6347b5d2bf83aa0235e"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
