@@ -26,11 +26,38 @@ public class PlayerInputController : MonoBehaviour
     {
         _horizontalMove = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetButtonDown("Jump"))
-            _isJumping = true;
+        UpdateState();
 
-        if (Input.GetButtonDown("Crouch")) _isCrouching = true;
+    }
+
+    private bool isMoving() { return _horizontalMove != 0; }
+
+    //todo: переделать это в нормальный updatestate
+    private void UpdateState()
+    {
+
+        if (Input.GetButtonDown("Jump") && _characterController.Grounded && !_isCrouching)
+        {
+            _isJumping = true;
+            _controller.UpdatePlayerState(PlayerState.Jump);
+            return;
+        }
+
+        if (Input.GetButtonDown("Crouch") && _characterController.Grounded && !_isJumping)
+        {
+            _isCrouching = true;
+            _controller.UpdatePlayerState(PlayerState.Crouch);
+            return;
+        }
         else if (Input.GetButtonUp("Crouch")) _isCrouching = false;
+
+        if (isMoving() && _characterController.Grounded && !_isCrouching && !_isJumping)
+            _controller.UpdatePlayerState(PlayerState.Walk);
+
+
+        if (!isMoving() && _characterController.Grounded && !_isCrouching && !_isJumping)
+            _controller.UpdatePlayerState(PlayerState.Idle);
+
     }
 
     private void FixedUpdate()

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum PlayerState { Idle, Walk, Jump, PreparingForDeath, Dead }
+public enum PlayerState { Idle, Walk, Jump, Crouch, PreparingForDeath, Dead }
 
 public class PlayerController : MonoBehaviour
 {
@@ -34,7 +34,8 @@ public class PlayerController : MonoBehaviour
 
         _currentState = newState;
 
-        Debug.Log($"Current state: {newState}");
+        // Debug.Clear();
+        // Debug.Log($"Current state: {newState}");
 
         OnPlayerStateUpdated?.Invoke(newState);
     }
