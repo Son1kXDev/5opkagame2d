@@ -25,17 +25,18 @@ public class PlayerInputController : MonoBehaviour
     private void Update()
     {
         _horizontalMove = Input.GetAxisRaw("Horizontal");
-
         UpdateState();
-
     }
 
     //todo: проверить вне unity
     private void OnApplicationPause(bool pauseStatus)
     {
-        UpdateState();
-        // _isCrouching = false;
-        // _horizontalMove = 0;
+        if (pauseStatus == false && _controller != null && _characterController != null)
+        {
+            _isCrouching = false;
+            _horizontalMove = 0;
+            UpdateState();
+        }
     }
 
     private bool isMoving() { return _horizontalMove != 0; }
