@@ -30,6 +30,14 @@ public class PlayerInputController : MonoBehaviour
 
     }
 
+    //todo: проверить вне unity
+    private void OnApplicationPause(bool pauseStatus)
+    {
+        UpdateState();
+        // _isCrouching = false;
+        // _horizontalMove = 0;
+    }
+
     private bool isMoving() { return _horizontalMove != 0; }
 
     //todo: переделать это в нормальный updatestate
