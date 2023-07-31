@@ -1,0 +1,124 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Fir Atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 034ca5876cda940d8ae28ab1373ae7d4, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 1267255318, guid: 034ca5876cda940d8ae28ab1373ae7d4, type: 3}
+  - {fileID: -472078447, guid: 034ca5876cda940d8ae28ab1373ae7d4, type: 3}
+  - {fileID: -2138781560, guid: 034ca5876cda940d8ae28ab1373ae7d4, type: 3}
+  - {fileID: 1206631135, guid: 034ca5876cda940d8ae28ab1373ae7d4, type: 3}
+  - {fileID: 870504595, guid: 034ca5876cda940d8ae28ab1373ae7d4, type: 3}
+  - {fileID: 180742889, guid: 034ca5876cda940d8ae28ab1373ae7d4, type: 3}
+  - {fileID: -917764623, guid: 034ca5876cda940d8ae28ab1373ae7d4, type: 3}
+  - {fileID: 1258546204, guid: 034ca5876cda940d8ae28ab1373ae7d4, type: 3}
+  - {fileID: 723981939, guid: 034ca5876cda940d8ae28ab1373ae7d4, type: 3}
+  - {fileID: -1281943619, guid: 034ca5876cda940d8ae28ab1373ae7d4, type: 3}
+  - {fileID: -97663438, guid: 034ca5876cda940d8ae28ab1373ae7d4, type: 3}
+  - {fileID: -302107247, guid: 034ca5876cda940d8ae28ab1373ae7d4, type: 3}
+  - {fileID: -484794986, guid: 034ca5876cda940d8ae28ab1373ae7d4, type: 3}
+  - {fileID: 1181228304, guid: 034ca5876cda940d8ae28ab1373ae7d4, type: 3}
+  - {fileID: -1303460424, guid: 034ca5876cda940d8ae28ab1373ae7d4, type: 3}
+  - {fileID: -1812695129, guid: 034ca5876cda940d8ae28ab1373ae7d4, type: 3}
+  - {fileID: 1802149396, guid: 034ca5876cda940d8ae28ab1373ae7d4, type: 3}
+  - {fileID: 307154751, guid: 034ca5876cda940d8ae28ab1373ae7d4, type: 3}
+  - {fileID: -709983352, guid: 034ca5876cda940d8ae28ab1373ae7d4, type: 3}
+  - {fileID: -898979955, guid: 034ca5876cda940d8ae28ab1373ae7d4, type: 3}
+  - {fileID: -2036951564, guid: 034ca5876cda940d8ae28ab1373ae7d4, type: 3}
+  - {fileID: -1619796672, guid: 034ca5876cda940d8ae28ab1373ae7d4, type: 3}
+  - {fileID: -1678483320, guid: 034ca5876cda940d8ae28ab1373ae7d4, type: 3}
+  - {fileID: -339948269, guid: 034ca5876cda940d8ae28ab1373ae7d4, type: 3}
+  - {fileID: -1840837225, guid: 034ca5876cda940d8ae28ab1373ae7d4, type: 3}
+  - {fileID: 172955600, guid: 034ca5876cda940d8ae28ab1373ae7d4, type: 3}
+  - {fileID: -1052129824, guid: 034ca5876cda940d8ae28ab1373ae7d4, type: 3}
+  - {fileID: 1173454284, guid: 034ca5876cda940d8ae28ab1373ae7d4, type: 3}
+  - {fileID: 1327009427, guid: 034ca5876cda940d8ae28ab1373ae7d4, type: 3}
+  - {fileID: -1344895202, guid: 034ca5876cda940d8ae28ab1373ae7d4, type: 3}
+  - {fileID: 730796311, guid: 034ca5876cda940d8ae28ab1373ae7d4, type: 3}
+  - {fileID: 315394219, guid: 034ca5876cda940d8ae28ab1373ae7d4, type: 3}
+  - {fileID: -38872605, guid: 034ca5876cda940d8ae28ab1373ae7d4, type: 3}
+  - {fileID: -343796386, guid: 034ca5876cda940d8ae28ab1373ae7d4, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - tile fir_18
+  - tile fir_19
+  - tile fir_14
+  - tile fir_15
+  - tile fir_16
+  - tile fir_17
+  - tile fir_10
+  - tile fir_11
+  - tile fir_12
+  - tile fir_13
+  - tile fir_32
+  - tile fir_33
+  - tile fir_30
+  - tile fir_31
+  - tile fir_25
+  - tile fir_24
+  - tile fir_27
+  - tile fir_26
+  - tile fir_21
+  - tile fir_20
+  - tile fir_23
+  - tile fir_22
+  - tile fir_29
+  - tile fir_28
+  - tile fir_5
+  - tile fir_4
+  - tile fir_7
+  - tile fir_6
+  - tile fir_1
+  - tile fir_0
+  - tile fir_3
+  - tile fir_2
+  - tile fir_9
+  - tile fir_8
+  m_RenderDataMap: {}
+  m_Tag: Fir Atlas
+  m_IsVariant: 0
