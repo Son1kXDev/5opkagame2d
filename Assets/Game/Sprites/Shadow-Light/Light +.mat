@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Light
+  m_Name: Light +
   m_Shader: {fileID: -6465566751694194690, guid: 128d85df47c9b4ce3bdc6eabe4ffeac1, type: 3}
   m_ValidKeywords:
   - _COLOR_MODE_GRADIEND
@@ -69,13 +69,13 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Wind_Activated: 0
-    - _Wind_Frequency: 0.9
-    - _Wind_Power: 0.08
+    - _Wind_Frequency: -0.11
+    - _Wind_Power: 0.1
     m_Colors:
-    - _Color: {r: 0.5684852, g: 0.6886792, b: 0.61728436, a: 0.1764706}
-    - _Emission: {r: 0.9433962, g: 0.9433962, b: 0.9433962, a: 1}
+    - _Color: {r: 0.9245283, g: 0.91452605, b: 0.87655747, a: 0.41960785}
+    - _Emission: {r: 0, g: 0, b: 0, a: 0}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _Vegetation_Color: {r: 1, g: 0.98493266, b: 0.8726415, a: 0.7372549}
-    - _Wind_Direction: {r: -0.1, g: 0, b: 0, a: 0}
+    - _Wind_Direction: {r: 0.1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

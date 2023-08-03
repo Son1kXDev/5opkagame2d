@@ -53,51 +53,19 @@ SpriteAtlas:
   - {fileID: 1734230951, guid: 6ea4d8cffeab24041aa84c6cc2a9e5d6, type: 3}
   - {fileID: -1452809986, guid: 6ea4d8cffeab24041aa84c6cc2a9e5d6, type: 3}
   - {fileID: -331729345, guid: 6ea4d8cffeab24041aa84c6cc2a9e5d6, type: 3}
-  - {fileID: -1120524638, guid: 6ea4d8cffeab24041aa84c6cc2a9e5d6, type: 3}
   - {fileID: -362615723, guid: 6ea4d8cffeab24041aa84c6cc2a9e5d6, type: 3}
-  - {fileID: -1726660355, guid: 6ea4d8cffeab24041aa84c6cc2a9e5d6, type: 3}
+  - {fileID: -1120524638, guid: 6ea4d8cffeab24041aa84c6cc2a9e5d6, type: 3}
   - {fileID: 1535306494, guid: 6ea4d8cffeab24041aa84c6cc2a9e5d6, type: 3}
-  - {fileID: -2000301609, guid: 6ea4d8cffeab24041aa84c6cc2a9e5d6, type: 3}
-  - {fileID: -2139500300, guid: 6ea4d8cffeab24041aa84c6cc2a9e5d6, type: 3}
-  - {fileID: -2044799625, guid: 6ea4d8cffeab24041aa84c6cc2a9e5d6, type: 3}
-  - {fileID: 2133677521, guid: 6ea4d8cffeab24041aa84c6cc2a9e5d6, type: 3}
-  - {fileID: 291792064, guid: 6ea4d8cffeab24041aa84c6cc2a9e5d6, type: 3}
-  - {fileID: 1815241105, guid: 6ea4d8cffeab24041aa84c6cc2a9e5d6, type: 3}
-  - {fileID: 1301214672, guid: 6ea4d8cffeab24041aa84c6cc2a9e5d6, type: 3}
-  - {fileID: -498195901, guid: 6ea4d8cffeab24041aa84c6cc2a9e5d6, type: 3}
-  - {fileID: 1795481563, guid: 6ea4d8cffeab24041aa84c6cc2a9e5d6, type: 3}
-  - {fileID: -1633881600, guid: 6ea4d8cffeab24041aa84c6cc2a9e5d6, type: 3}
-  - {fileID: -559426713, guid: 6ea4d8cffeab24041aa84c6cc2a9e5d6, type: 3}
-  - {fileID: 1507798250, guid: 6ea4d8cffeab24041aa84c6cc2a9e5d6, type: 3}
-  - {fileID: -1684180540, guid: 6ea4d8cffeab24041aa84c6cc2a9e5d6, type: 3}
-  - {fileID: 1766821946, guid: 6ea4d8cffeab24041aa84c6cc2a9e5d6, type: 3}
-  - {fileID: 766332911, guid: 6ea4d8cffeab24041aa84c6cc2a9e5d6, type: 3}
-  - {fileID: -1073347155, guid: 6ea4d8cffeab24041aa84c6cc2a9e5d6, type: 3}
+  - {fileID: -1726660355, guid: 6ea4d8cffeab24041aa84c6cc2a9e5d6, type: 3}
   - {fileID: -112842005, guid: 6ea4d8cffeab24041aa84c6cc2a9e5d6, type: 3}
   m_PackedSpriteNamesToIndex:
   - tile wood boards 1_0
-  - tile wood boards 1_3
-  - tile wood boards 1_2
-  - tile wood boards 1_5
-  - tile wood boards 1_4
   - tile wood boards 1_7
   - tile wood boards 1_6
-  - tile wood boards 1_9
-  - tile wood boards 1_8
-  - tile wood boards 1_10
-  - tile wood boards 1_11
   - tile wood boards 1_12
   - tile wood boards 1_13
-  - tile wood boards 1_14
-  - tile wood boards 1_15
-  - tile wood boards 1_16
-  - tile wood boards 1_17
   - tile wood boards 1_18
   - tile wood boards 1_19
-  - tile wood boards 1_21
-  - tile wood boards 1_20
-  - tile wood boards 1_23
-  - tile wood boards 1_22
   - tile wood boards 1_1
   m_RenderDataMap: {}
   m_Tag: Wood Board Atlas
