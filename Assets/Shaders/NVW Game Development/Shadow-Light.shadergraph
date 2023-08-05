@@ -13,9 +13,6 @@
             "m_Id": "047a3873dfe54899949b23a5e325676e"
         },
         {
-            "m_Id": "17ab635114024aa3a8dfe998475311c1"
-        },
-        {
             "m_Id": "49fd6a5c0c554def99390a1cc276a4fc"
         },
         {
@@ -1265,28 +1262,6 @@
     "m_Value": 0.0,
     "m_DefaultValue": 0.0,
     "m_Labels": []
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Internal.BooleanShaderProperty",
-    "m_ObjectId": "17ab635114024aa3a8dfe998475311c1",
-    "m_Guid": {
-        "m_GuidSerialized": "efa55f4f-fe3f-48ae-addc-7c9eca18cd73"
-    },
-    "m_Name": "Wind Activated",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "Wind Activated",
-    "m_DefaultReferenceName": "_Wind_Activated",
-    "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
-    "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
-    "m_Hidden": false,
-    "m_Value": false
 }
 
 {
@@ -5105,9 +5080,6 @@
     "m_ObjectId": "c8ca8b953b3143879e909946c5e1e015",
     "m_Name": "Wind",
     "m_ChildObjectList": [
-        {
-            "m_Id": "17ab635114024aa3a8dfe998475311c1"
-        },
         {
             "m_Id": "047a3873dfe54899949b23a5e325676e"
         },
