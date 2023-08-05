@@ -7,6 +7,8 @@ public enum PlayerState { Idle, Walk, Jump, Crouch, PreparingForDeath, Dead }
 
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController Instance => _instance;
+    private static PlayerController _instance;
 
     public Action<PlayerState> OnPlayerStateUpdated;
 
@@ -15,6 +17,12 @@ public class PlayerController : MonoBehaviour
     private PlayerState _currentState;
     private PlayerAnimationController _animationController;
     private PlayerInputController _inputController;
+
+    private void Awake()
+    {
+        if (_instance) Destroy(this.gameObject);
+        else _instance = this;
+    }
 
     private void Start() => InitializePlayer();
 
@@ -39,4 +47,11 @@ public class PlayerController : MonoBehaviour
 
         OnPlayerStateUpdated?.Invoke(newState);
     }
+
+    public void SetInput(bool value)
+    {
+        if (_inputController.enabled) _inputController.ForceStop();
+        _inputController.enabled = value;
+    }
+
 }

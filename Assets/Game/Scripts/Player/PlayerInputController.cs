@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using NTC.Global.Cache;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D), typeof(CharacterController2D))]
@@ -10,6 +11,7 @@ public class PlayerInputController : MonoBehaviour
 
     private PlayerController _controller;
     private CharacterController2D _characterController;
+    private Rigidbody2D _rigidbody;
 
     private float _horizontalMove = 0f;
 
@@ -20,6 +22,17 @@ public class PlayerInputController : MonoBehaviour
     {
         _controller = GetComponent<PlayerController>();
         _characterController = GetComponent<CharacterController2D>();
+        _rigidbody = GetComponent<Rigidbody2D>();
+    }
+
+    public void ForceStop()
+    {
+        _isCrouching = false;
+        _isJumping = false;
+        _horizontalMove = 0;
+        _characterController.Move(0, false, false);
+        _rigidbody.velocity = Vector2.zero;
+        UpdateState();
     }
 
     private void Update()
@@ -32,11 +45,7 @@ public class PlayerInputController : MonoBehaviour
     private void OnApplicationPause(bool pauseStatus)
     {
         if (pauseStatus == false && _controller != null && _characterController != null)
-        {
-            _isCrouching = false;
-            _horizontalMove = 0;
-            UpdateState();
-        }
+        { ForceStop(); }
     }
 
     private bool isMoving() { return _horizontalMove != 0; }
