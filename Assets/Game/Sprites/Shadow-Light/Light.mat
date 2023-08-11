@@ -11,6 +11,7 @@ Material:
   m_Shader: {fileID: -6465566751694194690, guid: 128d85df47c9b4ce3bdc6eabe4ffeac1, type: 3}
   m_ValidKeywords:
   - _COLOR_MODE_GRADIEND
+  - _MODE_STATIC
   m_InvalidKeywords:
   - _COLORE_MODE_GRADIEND
   m_LightmapFlags: 4
@@ -52,6 +53,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _Alpha_Fr: 1
     - _BUILTIN_AlphaClip: 0
     - _BUILTIN_Blend: 2
     - _BUILTIN_CullMode: 2
@@ -64,8 +66,9 @@ Material:
     - _BUILTIN_ZWrite: 0
     - _BUILTIN_ZWriteControl: 0
     - _COLORE_MODE: 1
-    - _COLOR_MODE: 1
+    - _COLOR_MODE: 0
     - _EnableExternalAlpha: 0
+    - _MODE: 0
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Wind_Activated: 0
@@ -73,6 +76,7 @@ Material:
     - _Wind_Power: 0.05
     m_Colors:
     - _Color: {r: 0.5684852, g: 0.6886792, b: 0.61728436, a: 0.1764706}
+    - _ColorTex: {r: 0.3490566, g: 0.31448025, b: 0.3411216, a: 1}
     - _Emission: {r: 0.9433962, g: 0.9433962, b: 0.9433962, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}

@@ -20,6 +20,6 @@ public class PlayerAnimationController : MonoBehaviour
 
     private void PlayerStateUpdated(PlayerState state)
     {
-        _animator.SetTrigger(state.ToString());
+        _animator.Play(state.ToString());
     }
 }

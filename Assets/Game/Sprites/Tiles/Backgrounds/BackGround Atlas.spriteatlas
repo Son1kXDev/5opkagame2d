@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: BackGround Atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: b2e82debf5850441189c53e722c659f9, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: -1538631618, guid: b2e82debf5850441189c53e722c659f9, type: 3}
+  - {fileID: 1115830827, guid: b2e82debf5850441189c53e722c659f9, type: 3}
+  - {fileID: 968741130, guid: b2e82debf5850441189c53e722c659f9, type: 3}
+  - {fileID: -1644127267, guid: b2e82debf5850441189c53e722c659f9, type: 3}
+  - {fileID: -1357570413, guid: b2e82debf5850441189c53e722c659f9, type: 3}
+  - {fileID: -1928767001, guid: b2e82debf5850441189c53e722c659f9, type: 3}
+  - {fileID: 395568809, guid: b2e82debf5850441189c53e722c659f9, type: 3}
+  - {fileID: 1806190129, guid: b2e82debf5850441189c53e722c659f9, type: 3}
+  - {fileID: 1265906569, guid: b2e82debf5850441189c53e722c659f9, type: 3}
+  - {fileID: -808459068, guid: b2e82debf5850441189c53e722c659f9, type: 3}
+  - {fileID: -905504669, guid: b2e82debf5850441189c53e722c659f9, type: 3}
+  - {fileID: -2068610563, guid: b2e82debf5850441189c53e722c659f9, type: 3}
+  - {fileID: 1535757640, guid: b2e82debf5850441189c53e722c659f9, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - background _12
+  - background _11
+  - background _10
+  - background _8
+  - background _9
+  - background _0
+  - background _1
+  - background _2
+  - background _3
+  - background _4
+  - background _5
+  - background _6
+  - background _7
+  m_RenderDataMap: {}
+  m_Tag: BackGround Atlas
+  m_IsVariant: 0
