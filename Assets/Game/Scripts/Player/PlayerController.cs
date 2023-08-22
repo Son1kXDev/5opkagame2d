@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour
     private static PlayerController _instance;
 
     public Action<PlayerState> OnPlayerStateUpdated;
-
     public PlayerState CurrentState => _currentState;
 
     private PlayerState _currentState;
@@ -46,6 +45,11 @@ public class PlayerController : MonoBehaviour
         // Debug.Log($"Current state: {newState}");
 
         OnPlayerStateUpdated?.Invoke(newState);
+    }
+
+    public void TakeDamage(float damage)
+    {
+        Debug.Log($"Take damage: {damage}");
     }
 
     public void SetInput(bool value)
