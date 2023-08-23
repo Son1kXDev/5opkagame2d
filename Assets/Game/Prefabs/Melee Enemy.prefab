@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7866340797894274973}
   - component: {fileID: 7866340797894274963}
   - component: {fileID: 7866340797894274974}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Melee Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8df21afad1af5004694f554574fe2436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _maxHealth: 50
   _currentState: 0
   _groundLayer:
     serializedVersion: 2

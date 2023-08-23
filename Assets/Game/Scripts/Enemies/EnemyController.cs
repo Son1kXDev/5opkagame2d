@@ -6,7 +6,7 @@ using UnityEngine;
 
 public enum EnemyState { Patrol, Follow, Attack, PreparingForDeath, Dead }
 
-public class EnemyController : MonoBehaviour
+public class EnemyController : Health
 {
 
     public Action<EnemyState> OnEnemyStateUpdated;
@@ -22,6 +22,7 @@ public class EnemyController : MonoBehaviour
     public void InitializeEnemy()
     {
         _rigidbody = GetComponent<Rigidbody2D>();
+        InitializeHealth();
         UpdateEnemyState(EnemyState.Patrol);
     }
     public void UpdateEnemyState(EnemyState newState)
@@ -49,7 +50,13 @@ public class EnemyController : MonoBehaviour
             _rigidbody.AddForce(new Vector2(0f, 250f));
     }
 
-    public void TakeDamage(float damage)
-    { Debug.Log($"Take damage: {damage}"); }
+    protected override void VisualizeHealth()
+    {
+        //
+    }
 
+    protected override void OnDeath()
+    {
+        //
+    }
 }

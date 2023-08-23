@@ -5,7 +5,7 @@ using UnityEngine;
 
 public enum PlayerState { Idle, Walk, Jump, Crouch, PreparingForDeath, Dead }
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : Health
 {
     public static PlayerController Instance => _instance;
     private static PlayerController _instance;
@@ -33,6 +33,9 @@ public class PlayerController : MonoBehaviour
 
         _inputController?.Initialize();
         _animationController?.Initialize();
+
+
+        InitializeHealth();
     }
 
     public void UpdatePlayerState(PlayerState newState)
@@ -47,15 +50,20 @@ public class PlayerController : MonoBehaviour
         OnPlayerStateUpdated?.Invoke(newState);
     }
 
-    public void TakeDamage(float damage)
-    {
-        Debug.Log($"Take damage: {damage}");
-    }
-
     public void SetInput(bool value)
     {
         if (_inputController.enabled) _inputController.ForceStop();
         _inputController.enabled = value;
     }
 
+    protected override void VisualizeHealth()
+    {
+        Debug.SetColor(Color.red);
+        Debug.Log("TAKING DAMAGE! Current health: " + _currentHealth);
+    }
+
+    protected override void OnDeath()
+    {
+        Debug.Log("Player died!");
+    }
 }

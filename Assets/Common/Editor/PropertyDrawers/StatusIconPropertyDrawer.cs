@@ -25,6 +25,9 @@ public class StatusIconPropertyDrawer : PropertyDrawer
         else if (attr.minFlt != null)
             property.PropertyField(position, label,
             property.floatValue > attr.minFlt && property.floatValue < attr.maxFlt ? PropertyIconType.Confirm : PropertyIconType.Error);
+        else if (attr.minInt != null)
+            property.PropertyField(position, label,
+            property.intValue > attr.minInt && property.intValue < attr.maxInt ? PropertyIconType.Confirm : PropertyIconType.Error);
         else property.PropertyField(position, label,
         property.objectReferenceValue != null ? PropertyIconType.Confirm : PropertyIconType.Error);
     }

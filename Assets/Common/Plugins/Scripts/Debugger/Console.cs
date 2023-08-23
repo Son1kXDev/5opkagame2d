@@ -48,9 +48,9 @@ public partial class Debug
     public static void Clear() { }
 #endif
 
-    private static Color _color = Color.gray;
+    private static Color _color = Color.white;
 
-    private static Style _style;
+    private static Style _style = Style.none;
 
     private static string ColorString
     {
