@@ -65,7 +65,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 583907b5c62b41a43be1a089b3a5ae71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyConfig: {fileID: 0}
+  _enemyConfig: {fileID: 11400000, guid: aeb2b5703065a8648980288daf4843b8, type: 2}
   _rangeCollider: {fileID: 7866340797894274974}
   _playerMask:
     serializedVersion: 2
