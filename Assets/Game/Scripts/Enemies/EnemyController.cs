@@ -1,62 +1,90 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
+using System.ComponentModel;
 using UnityEngine;
 
-public enum EnemyState { Patrol, Follow, Attack, PreparingForDeath, Dead }
-
-public class EnemyController : Health
+[RequireComponent(typeof(Rigidbody2D), typeof(EnemyManager))]
+public class EnemyController : MonoBehaviour
 {
+    [SerializeField, StatusIcon] private Enemy _enemyConfig;
 
-    public Action<EnemyState> OnEnemyStateUpdated;
-    public EnemyState CurrentState => _currentState;
-    [SerializeField, ShowOnly] private EnemyState _currentState;
+    [Header("Other")]
+    [SerializeField, StatusIcon] private BoxCollider2D _rangeCollider;
+    [SerializeField] private LayerMask _playerMask;
 
-    [SerializeField] LayerMask _groundLayer;
-
+    private float _cooldownTimer = Mathf.Infinity;
+    private EnemyManager _enemyManager;
     private Rigidbody2D _rigidbody;
 
-    private void Start() => InitializeEnemy();
-
-    public void InitializeEnemy()
+    private void Awake()
     {
+        _enemyManager = GetComponent<EnemyManager>();
         _rigidbody = GetComponent<Rigidbody2D>();
-        InitializeHealth();
-        UpdateEnemyState(EnemyState.Patrol);
-    }
-    public void UpdateEnemyState(EnemyState newState)
-    {
-        if (newState == _currentState) return;
-        if (!IsRightState(newState)) return;
-
-        _currentState = newState;
-
-        // Debug.Log($"Current state: {_currentState}");
-        // OnEnemyStateUpdated?.Invoke(newState);
     }
 
-    private bool IsRightState(EnemyState newState)
+    private void Update()
     {
-        if (_currentState == EnemyState.Dead) return false;
+        switch (_enemyManager.CurrentState)
+        {
+            case EnemyState.Patrol:
+                if (PlayerInView()) _enemyManager.UpdateEnemyState(EnemyState.Follow);
+                break;
 
-        else return true;
+            case EnemyState.Follow:
+                if (PlayerInSight()) _enemyManager.UpdateEnemyState(EnemyState.Attack);
+                if (PlayerInView() == false) _enemyManager.UpdateEnemyState(EnemyState.Patrol);
+                break;
+
+            case EnemyState.Attack:
+                _cooldownTimer += Time.deltaTime;
+                if (_cooldownTimer >= _enemyConfig.AttackDelay)
+                {
+                    _cooldownTimer = 0;
+                    //todo: set trigger animation
+                    DamagePlayer();
+                }
+                if (PlayerInSight() == false) _enemyManager.UpdateEnemyState(EnemyState.Follow);
+                break;
+        }
+
     }
 
-    public void Jump()
+    private bool PlayerInView()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.6f, _groundLayer);
-        if (hit.collider != null)
-            _rigidbody.AddForce(new Vector2(0f, 250f));
+        RaycastHit2D hit =
+        Physics2D.BoxCast(_rangeCollider.bounds.center + _enemyConfig.FieldColliderDistance * _enemyConfig.FieldHorizontalRange
+        * transform.localScale.x * transform.right, new Vector3(_rangeCollider.bounds.size.x * _enemyConfig.FieldHorizontalRange,
+        _rangeCollider.bounds.size.y * _enemyConfig.FieldVerticalRange, _rangeCollider.bounds.size.z),
+        0, Vector2.left, 0, _playerMask);
+        return hit.collider != null;
     }
 
-    protected override void VisualizeHealth()
+    private bool PlayerInSight()
     {
-        //
+        RaycastHit2D hit =
+        Physics2D.BoxCast(_rangeCollider.bounds.center + _enemyConfig.AttackColliderDistance * _enemyConfig.AttackHorizontalRange
+        * transform.localScale.x * transform.right, new Vector3(_rangeCollider.bounds.size.x * _enemyConfig.AttackHorizontalRange,
+        _rangeCollider.bounds.size.y * _enemyConfig.AttackVerticalRange, _rangeCollider.bounds.size.z),
+        0, Vector2.left, 0, _playerMask);
+        return hit.collider != null;
     }
 
-    protected override void OnDeath()
+    private void DamagePlayer()
     {
-        //
+        if (PlayerInSight())
+            PlayerController.Instance.TakeDamage(_enemyConfig.Damage);
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (_enemyConfig == null) return;
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(_rangeCollider.bounds.center + _enemyConfig.AttackColliderDistance * _enemyConfig.AttackHorizontalRange
+        * transform.localScale.x * transform.right, new Vector3(_rangeCollider.bounds.size.x * _enemyConfig.AttackHorizontalRange,
+        _rangeCollider.bounds.size.y * _enemyConfig.AttackVerticalRange, _rangeCollider.bounds.size.z));
+
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireCube(_rangeCollider.bounds.center + _enemyConfig.FieldColliderDistance * _enemyConfig.FieldHorizontalRange
+        * transform.localScale.x * transform.right, new Vector3(_rangeCollider.bounds.size.x * _enemyConfig.FieldHorizontalRange,
+        _rangeCollider.bounds.size.y * _enemyConfig.FieldVerticalRange, _rangeCollider.bounds.size.z));
     }
 }

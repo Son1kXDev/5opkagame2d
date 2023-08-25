@@ -10,7 +10,7 @@ public class EnemyPatrolController : MonoBehaviour
 
     [Header("Enemy")]
     [SerializeField, StatusIcon] private Transform _enemy;
-    [SerializeField, StatusIcon] private EnemyController _enemyController;
+    [SerializeField, StatusIcon] private EnemyManager _enemyController;
 
     [Header("Movement")]
     [SerializeField, StatusIcon(minValue: 0f)] private float _speed;
