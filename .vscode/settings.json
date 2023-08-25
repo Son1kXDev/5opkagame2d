@@ -54,5 +54,9 @@
     "dotnet.defaultSolution": "5opkagame2d.sln",
     "[csharp]": {
         "editor.formatOnSave": true
-    }
+    },
+    "cSpell.words": [
+        "ввода",
+        "Ожидание"
+    ]
 }
