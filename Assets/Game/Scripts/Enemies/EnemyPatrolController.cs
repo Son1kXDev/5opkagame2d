@@ -71,25 +71,6 @@ public class EnemyPatrolController : MonoBehaviour
         _enemyController.Move(transform.position + (offset * _speed * Time.deltaTime));
     }
 
-    private void FixedUpdate()
-    {
-        switch (_enemyManager.CurrentState)
-        {
-            case EnemyState.Patrol:
-            case EnemyState.Follow:
-                CheckForObstacle();
-                break;
-            default:
-                break;
-        }
-    }
-
-    private void CheckForObstacle()
-    {
-        RaycastHit2D hit = Physics2D.Raycast(_enemy.position, Vector2.right * _enemy.localScale, 1.5f, _groundLayer);
-        if (hit.collider != null)
-            _enemyManager.Jump();
-    }
 
     private void OnDrawGizmos()
     {
