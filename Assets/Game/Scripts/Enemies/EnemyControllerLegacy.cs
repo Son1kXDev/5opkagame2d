@@ -2,7 +2,7 @@ using System.ComponentModel;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(EnemyManager))]
-public class EnemyController : MonoBehaviour
+public class EnemyControllerLegacy : MonoBehaviour
 {
     [SerializeField, StatusIcon] private Enemy _enemyConfig;
 
@@ -45,6 +45,11 @@ public class EnemyController : MonoBehaviour
                 break;
         }
 
+    }
+
+    public void Move(Vector2 direction)
+    {
+        _rigidbody.MovePosition(direction);
     }
 
     private bool PlayerInView()

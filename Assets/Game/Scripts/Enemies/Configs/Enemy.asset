@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfb17eb54931def41b36c58226c77759, type: 3}
   m_Name: Enemy
   m_EditorClassIdentifier: 
-  <FieldVerticalRange>k__BackingField: 8.5
-  <FieldHorizontalRange>k__BackingField: 5.5
-  <FieldColliderDistance>k__BackingField: 0.6
+  <FieldVerticalRange>k__BackingField: 8.3
+  <FieldHorizontalRange>k__BackingField: 6.5
+  <FieldColliderDistance>k__BackingField: 0.4
   <AttackVerticalRange>k__BackingField: 3
   <AttackHorizontalRange>k__BackingField: 2
   <AttackColliderDistance>k__BackingField: 0.5
