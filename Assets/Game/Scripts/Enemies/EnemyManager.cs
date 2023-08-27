@@ -1,3 +1,4 @@
+using System.Diagnostics;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -32,11 +33,12 @@ public class EnemyManager : Health
 
     protected override void VisualizeHealth()
     {
-        //
+        Debug.SetColor(Color.blue);
+        Debug.Log("Taking damage! Current Health: " + _currentHealth);
     }
 
     protected override void OnDeath()
     {
-        //
+        Debug.Log("Enemy died!");
     }
 }

@@ -7,39 +7,22 @@ using System;
 [Component("Enemy AI")]
 public class EnemyAI : MonoBehaviour
 {
-    [Header("Pathfinding System")]
-    [SerializeField, StatusIcon(minValue: 0f)] private float _activationDistance = 8.5f;
-    [SerializeField, StatusIcon(minValue: 0f)] private float _pathUpdateSeconds = .1f;
+    [Header("Config")]
+    [SerializeField, StatusIcon] private Enemy _enemyConfig;
 
     [Header("Patrol System")]
     [SerializeField] private List<Transform> _patrolPoints = new List<Transform>();
 
-    [Header("Attack System")]
-    [SerializeField, StatusIcon(minValue: 0f)] private float _attackDistance = 1.5f;
-    [SerializeField, StatusIcon(minValue: 0f)] private float _attackCooldown = 2.5f;
-    [SerializeField, StatusIcon(minValue: 0)] private int _damage = 10;
-
-    [Header("Physics")]
-    [SerializeField, StatusIcon(minValue: 0f)] private float _speed = 200f;
-    [SerializeField, StatusIcon(minValue: 0f)] private float _nextWaypointDistance = 3f;
-    [SerializeField, StatusIcon(minValue: 0f)] private float _jumpNodeHeightRequirement = 0.8f;
-    [SerializeField, StatusIcon(minValue: 0f)] private float _jumpModifier = 0.3f;
-    [SerializeField] private LayerMask _groundLayer;
-
-    [Header("Custom Behaviour")]
-    [SerializeField] private bool _jumpEnabled = true;
-    [SerializeField] private bool _directionLookEnabled = true;
-
-    private Path _path;
     private int _currentWaypointIndex = 0;
     private int _currentPatrolPointIndex = 0;
     private float _cooldownTimer = 0f;
-    private Seeker _seeker;
-    private Rigidbody2D _rigidbody;
-    private Collider2D _collider;
-    private EnemyManager _enemyManager;
     private Transform _player;
     private Transform _currentTarget;
+    private Rigidbody2D _rigidbody;
+    private Collider2D _collider;
+    private Path _path;
+    private Seeker _seeker;
+    private EnemyManager _enemyManager;
 
     private void Start()
     {
@@ -49,7 +32,10 @@ public class EnemyAI : MonoBehaviour
         _enemyManager = GetComponent<EnemyManager>();
         _player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        InvokeRepeating(nameof(UpdatePath), 0f, _pathUpdateSeconds);
+        if (_enemyConfig == null)
+            throw new NullReferenceException("Enemy Config is null");
+
+        InvokeRepeating(nameof(UpdatePath), 0f, _enemyConfig.PathUpdateSeconds);
     }
 
     private void UpdatePath()
@@ -82,11 +68,11 @@ public class EnemyAI : MonoBehaviour
             case EnemyState.Attack:
                 if (PlayerInAttackDistance() == false) _enemyManager.UpdateEnemyState(EnemyState.Follow);
 
-                _cooldownTimer += _pathUpdateSeconds;
-                if (_cooldownTimer >= _attackCooldown)
+                _cooldownTimer += _enemyConfig.PathUpdateSeconds;
+                if (_cooldownTimer >= _enemyConfig.AttackCooldown)
                 {
                     _cooldownTimer = 0;
-                    PlayerController.Instance.TakeDamage(_damage);
+                    PlayerController.Instance.TakeDamage(_enemyConfig.Damage);
                 }
                 break;
 
@@ -116,12 +102,12 @@ public class EnemyAI : MonoBehaviour
         if (_path == null) return;
         if (_currentWaypointIndex >= _path.vectorPath.Count) return;
 
-        RaycastHit2D isGrounded = Physics2D.BoxCast(_collider.bounds.center, _collider.bounds.size, 0, Vector2.down, 0.1f, _groundLayer);
+        RaycastHit2D isGrounded = Physics2D.BoxCast(_collider.bounds.center, _collider.bounds.size, 0, Vector2.down, 0.1f, _enemyConfig.GroundLayer);
 
         Vector2 direction = ((Vector2)_path.vectorPath[_currentWaypointIndex] - _rigidbody.position).normalized;
-        Vector2 force = direction * _speed * Time.fixedDeltaTime;
+        Vector2 force = direction * _enemyConfig.Speed * Time.fixedDeltaTime;
 
-        if (_directionLookEnabled)
+        if (_enemyConfig.DirectionLookEnabled)
         {
             if (_rigidbody.velocity.x > 0.05f)
                 transform.localScale = new Vector3(-1f * Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
@@ -130,36 +116,38 @@ public class EnemyAI : MonoBehaviour
         }
 
 
-        if (isGrounded && _jumpEnabled)
+        if (isGrounded && _enemyConfig.JumpEnabled)
         {
-            if (direction.y > _jumpNodeHeightRequirement)
-                _rigidbody.AddForce(Vector2.up * _speed * _jumpModifier);
+            if (direction.y > _enemyConfig.JumpNodeHeightRequirement)
+                _rigidbody.AddForce(Vector2.up * _enemyConfig.Speed * _enemyConfig.JumpModifier);
         }
 
         force.y = 0;
         _rigidbody.AddForce(force);
 
         float distance = Vector2.Distance(_rigidbody.position, _path.vectorPath[_currentWaypointIndex]);
-        if (distance < _nextWaypointDistance)
+        if (distance < _enemyConfig.NextWaypointDistance)
             _currentWaypointIndex++;
     }
 
     private bool PlayerInViewDistance()
     {
-        return Vector2.Distance(transform.position, _player.position) < _activationDistance;
+        return Vector2.Distance(transform.position, _player.position) < _enemyConfig.ActivationDistance;
     }
 
     private bool PlayerInAttackDistance()
     {
-        return Vector2.Distance(transform.position, _player.position) < _attackDistance;
+        return Vector2.Distance(transform.position, _player.position) < _enemyConfig.AttackDistance;
     }
 
     private void OnDrawGizmos()
     {
+        if (_enemyConfig == null) return;
+
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, _activationDistance);
+        Gizmos.DrawWireSphere(transform.position, _enemyConfig.ActivationDistance);
 
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, _attackDistance);
+        Gizmos.DrawWireSphere(transform.position, _enemyConfig.AttackDistance);
     }
 }
