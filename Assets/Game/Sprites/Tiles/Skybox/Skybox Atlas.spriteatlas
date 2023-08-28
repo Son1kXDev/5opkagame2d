@@ -1,0 +1,164 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Skybox Atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 1266314468, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: 42877522, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: 402034690, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: -1475611893, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: 459723205, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: -1665340268, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: 1232241735, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: -1555914194, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: -309127978, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: -433784488, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: -250947887, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: 602137562, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: 1244774693, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: 1251786889, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: 503989755, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: 74812465, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: 391739442, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: -2086763494, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: -1593257758, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: 1401739127, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: 432905947, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: 51318293, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: -1281998168, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: 1173617772, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: -1385836369, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: -121451117, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: -1802357818, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: 252405702, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: -514804919, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: -937290178, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: -264443816, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: 1666303454, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: 913093942, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: -1845952737, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: -549732796, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: 2116075321, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: 2013038587, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: 104511302, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: -846497165, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: -673181195, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: -1940895441, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: -1310126976, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: 1320163012, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: 684285747, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: 989752981, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: -1279181234, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: -88249374, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: -396852859, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: 2070422900, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: -1966077466, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: 495555198, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: -479808347, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: 829977601, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  - {fileID: -1176162045, guid: c141aa0fdebb24796bafdfb64c00dd1c, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - skybox_19
+  - skybox_18
+  - skybox_17
+  - skybox_16
+  - skybox_15
+  - skybox_14
+  - skybox_13
+  - skybox_12
+  - skybox_11
+  - skybox_10
+  - skybox_4
+  - skybox_5
+  - skybox_6
+  - skybox_7
+  - skybox_0
+  - skybox_1
+  - skybox_2
+  - skybox_3
+  - skybox_8
+  - skybox_9
+  - skybox_40
+  - skybox_41
+  - skybox_42
+  - skybox_22
+  - skybox_43
+  - skybox_53
+  - skybox_23
+  - skybox_44
+  - skybox_52
+  - skybox_20
+  - skybox_45
+  - skybox_51
+  - skybox_21
+  - skybox_35
+  - skybox_46
+  - skybox_50
+  - skybox_26
+  - skybox_34
+  - skybox_47
+  - skybox_27
+  - skybox_37
+  - skybox_48
+  - skybox_24
+  - skybox_36
+  - skybox_49
+  - skybox_25
+  - skybox_31
+  - skybox_30
+  - skybox_33
+  - skybox_28
+  - skybox_32
+  - skybox_29
+  - skybox_39
+  - skybox_38
+  m_RenderDataMap: {}
+  m_Tag: Skybox Atlas
+  m_IsVariant: 0
