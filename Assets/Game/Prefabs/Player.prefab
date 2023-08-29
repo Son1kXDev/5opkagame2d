@@ -12,9 +12,7 @@ GameObject:
   - component: {fileID: 6018588533592806013}
   - component: {fileID: 4596817973939725905}
   - component: {fileID: 1576116675547148405}
-  - component: {fileID: 1576116675547148407}
   - component: {fileID: 1576116675547148406}
-  - component: {fileID: 1576116675547148400}
   - component: {fileID: 1576116675547148362}
   m_Layer: 7
   m_Name: Player
@@ -95,20 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a92745f2dcc07134981042795d4843a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
---- !u!114 &1576116675547148407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1576116675547148367}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 306ea9c9a8cdf9b4e920c6e576aa542f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _walkSpeed: 20
+  <Config>k__BackingField: {fileID: 11400000, guid: 60f9b52e4c947c34e8a7d5db4dead647, type: 2}
 --- !u!114 &1576116675547148406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,18 +122,6 @@ MonoBehaviour:
   OnCrouchEvent:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &1576116675547148400
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1576116675547148367}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9f78a07756a19d45a0e5a6a06ba7094, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &1576116675547148362
 Rigidbody2D:
   serializedVersion: 4

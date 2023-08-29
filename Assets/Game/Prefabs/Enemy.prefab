@@ -44,7 +44,6 @@ GameObject:
   - component: {fileID: 7695779925723815564}
   - component: {fileID: 7695779925723815565}
   - component: {fileID: 7695779925723815561}
-  - component: {fileID: 7695779925723815563}
   - component: {fileID: 7695779925723815562}
   - component: {fileID: 7695779925723815566}
   - component: {fileID: 7695779925723815567}
@@ -134,22 +133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8df21afad1af5004694f554574fe2436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxHealth: 100
-  _currentState: 0
---- !u!114 &7695779925723815563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7695779925723815600}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b302f2fdfe2fa344ca7f32a1e380d21b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enemyConfig: {fileID: 11400000, guid: aeb2b5703065a8648980288daf4843b8, type: 2}
-  _patrolPoints:
+  <EnemyConfig>k__BackingField: {fileID: 11400000, guid: aeb2b5703065a8648980288daf4843b8, type: 2}
+  <PatrolPoints>k__BackingField:
   - {fileID: 7695779925739699918}
   - {fileID: 7695779927440441994}
 --- !u!114 &7695779925723815562

@@ -1,9 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public enum PlayerStateEnum { Idle, Walk, Jump, Crouch, PreparingForDeath, Dead }
 
 public enum PlayerAnimationTrigger { Idle, Attack, Walk, Jump, Falling, Crouch, Dead }
 
@@ -11,10 +8,6 @@ public class Player : Health
 {
     public static Player Instance => _instance;
     private static Player _instance;
-
-    public Action<PlayerStateEnum> OnPlayerStateUpdated;
-    public PlayerStateEnum CurrentState => _currentState;
-    private PlayerStateEnum _currentState;
 
     [field: SerializeField, StatusIcon] public PlayerConfig Config { get; private set; }
     public InputControls InputControls { get; private set; }
@@ -26,12 +19,7 @@ public class Player : Health
 
     public bool IsCrouching { get; private set; }
     public bool IsJumping { get; set; }
-
     public Animator PlayerAnimator { get; private set; }
-
-    private PlayerAnimationController _animationController;
-    private PlayerInputController _inputController;
-
 
     private void Awake()
     {
@@ -44,12 +32,6 @@ public class Player : Health
     public void InitializePlayer()
     {
         if (Config == null) throw new NullReferenceException("Player config is null");
-
-        TryGetComponent<PlayerInputController>(out _inputController);
-        TryGetComponent<PlayerAnimationController>(out _animationController);
-
-        // _inputController?.Initialize();
-        // _animationController?.Initialize();
 
         PlayerAnimator = GetComponentInChildren<Animator>();
         CharacterController = GetComponent<CharacterController2D>();
@@ -102,13 +84,6 @@ public class Player : Health
         StateMachine.CurrentPlayerState.AnimationTriggerEvent(PlayerAnimationTrigger.Attack);
     }
 
-    public void UpdatePlayerState(PlayerStateEnum newState)
-    {
-        if (newState == _currentState) return;
-        _currentState = newState;
-        OnPlayerStateUpdated?.Invoke(newState);
-    }
-
     public void SetInput(bool value)
     {
         if (value == false)
@@ -117,9 +92,9 @@ public class Player : Health
             IsJumping = false;
             CharacterController.Move(0, false, false);
             StateMachine.ChangeState(IdleState);
+            InputControls.Disable();
         }
-
-        _inputController.enabled = value;
+        else InputControls.Enable();
     }
 
     protected override void VisualizeHealth()
