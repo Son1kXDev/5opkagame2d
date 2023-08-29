@@ -47,9 +47,9 @@ public class PlayerCameraController : MonoCache
     {
         _cashedOffset = _offset;
         _offset = offset;
-        PlayerController.Instance.SetInput(false);
+        Player.Instance.SetInput(false);
         yield return new WaitForSeconds(focusTime);
-        PlayerController.Instance.SetInput(true);
+        Player.Instance.SetInput(true);
         _offset = (Vector3)_cashedOffset;
         _cashedOffset = null;
     }

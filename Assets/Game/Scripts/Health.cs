@@ -5,7 +5,7 @@ using UnityEngine;
 
 public abstract class Health : MonoCache
 {
-    [SerializeField, StatusIcon(minValue: 0)] protected int _maxHealth;
+    protected int _maxHealth;
     protected int _currentHealth;
 
     private bool _dead = false;
@@ -13,8 +13,9 @@ public abstract class Health : MonoCache
     /// <summary>
     /// Resets the health to the max health.
     /// </summary>
-    protected virtual void InitializeHealth()
+    protected virtual void InitializeHealth(int maxHealth)
     {
+        _maxHealth = maxHealth;
         _currentHealth = _maxHealth;
         _dead = false;
     }

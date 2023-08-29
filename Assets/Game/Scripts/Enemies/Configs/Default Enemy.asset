@@ -12,15 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfb17eb54931def41b36c58226c77759, type: 3}
   m_Name: Default Enemy
   m_EditorClassIdentifier: 
-  <ActivationDistance>k__BackingField: 8.39
-  <PathUpdateSeconds>k__BackingField: 0.1
-  <AttackDistance>k__BackingField: 1.8
-  <AttackCooldown>k__BackingField: 2.5
+  <MaximumHealth>k__BackingField: 100
   <Damage>k__BackingField: 10
   <Speed>k__BackingField: 300
+  <JumpForce>k__BackingField: 0.8
+  <ActivationDistance>k__BackingField: 8.39
+  <PathUpdateSeconds>k__BackingField: 0.1
+  <MemoryDelay>k__BackingField: 4
+  <AttackDistance>k__BackingField: 1.8
+  <AttackCooldown>k__BackingField: 2.5
   <NextWaypointDistance>k__BackingField: 3
   <JumpNodeHeightRequirement>k__BackingField: 0.8
-  <JumpModifier>k__BackingField: 0.8
   <GroundLayer>k__BackingField:
     serializedVersion: 2
     m_Bits: 8

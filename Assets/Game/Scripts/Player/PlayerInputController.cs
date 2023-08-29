@@ -1,9 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using NTC.Global.Cache;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 
 [RequireComponent(typeof(Rigidbody2D), typeof(Collider2D), typeof(CharacterController2D))]
@@ -12,7 +7,7 @@ public class PlayerInputController : MonoBehaviour
     [SerializeField] float _walkSpeed = 10f;
 
     private InputControls _inputControls;
-    private PlayerController _controller;
+    private Player _controller;
     private CharacterController2D _characterController;
     private Rigidbody2D _rigidbody;
     private float _horizontalMove = 0f;
@@ -21,7 +16,7 @@ public class PlayerInputController : MonoBehaviour
 
     public void Initialize()
     {
-        _controller = GetComponent<PlayerController>();
+        _controller = GetComponent<Player>();
         _characterController = GetComponent<CharacterController2D>();
         _rigidbody = GetComponent<Rigidbody2D>();
         _inputControls = new InputControls();
@@ -53,14 +48,7 @@ public class PlayerInputController : MonoBehaviour
         UpdateState();
     }
 
-    //todo: проверить вне unity
-    private void OnApplicationPause(bool pauseStatus)
-    {
-        if (pauseStatus == false && _controller != null && _characterController != null)
-        { ForceStop(); }
-    }
-
-    private bool isMoving() { return _horizontalMove != 0; }
+    private bool IsMoving() { return _horizontalMove != 0; }
 
     private void Attack() { }
 
@@ -69,7 +57,7 @@ public class PlayerInputController : MonoBehaviour
         if (_characterController.Grounded && !_isJumping)
         {
             _isCrouching = true;
-            _controller.UpdatePlayerState(PlayerState.Crouch);
+            _controller.UpdatePlayerState(PlayerStateEnum.Crouch);
         }
     }
     private void UnCrouch() => _isCrouching = false;
@@ -78,18 +66,18 @@ public class PlayerInputController : MonoBehaviour
         if (_characterController.Grounded && !_isCrouching)
         {
             _isJumping = true;
-            _controller.UpdatePlayerState(PlayerState.Jump);
+            _controller.UpdatePlayerState(PlayerStateEnum.Jump);
         }
     }
 
     //todo: переделать это в нормальный updatestate
     private void UpdateState()
     {
-        if (isMoving() && _characterController.Grounded && !_isCrouching && !_isJumping)
-            _controller.UpdatePlayerState(PlayerState.Walk);
+        if (IsMoving() && _characterController.Grounded && !_isCrouching && !_isJumping)
+            _controller.UpdatePlayerState(PlayerStateEnum.Walk);
 
-        if (!isMoving() && _characterController.Grounded && !_isCrouching && !_isJumping)
-            _controller.UpdatePlayerState(PlayerState.Idle);
+        if (!IsMoving() && _characterController.Grounded && !_isCrouching && !_isJumping)
+            _controller.UpdatePlayerState(PlayerStateEnum.Idle);
     }
 
     private void FixedUpdate()
