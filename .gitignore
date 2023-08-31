@@ -16,11 +16,11 @@ UnityGenerated/
 # =============== #
 # FMOD Studio #
 # =============== #
-[Ff][Mm]od[Ss]tudio/*/.cache/
-[Ff][Mm]od[Ss]tudio/*/.user/
 ![Aa]ssets/Plugins/FMOD/**/lib/*
 ![Aa]ssets/Gizmos/FMOD/*
 ![Aa]ssets/Editor Default Resources/FMOD/*
+[Ff][Mm]od[Ss]tudio[Pp]roject/*/.cache/
+[Ff][Mm]od[Ss]tudio[Pp]roject/*/.user/
 [Aa]ssets/Plugins/FMOD/Cache/*
 [Aa]ssets/StreamingAssets/**/*.bank
 [Aa]ssets/StreamingAssets/**/*.bank.meta
@@ -51,7 +51,6 @@ Thumbs.db
 .idea/
 .consulo/
 .vs
-
 
 # Ignore the following file extensions
 *.DS_Store
