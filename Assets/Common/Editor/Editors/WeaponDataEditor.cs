@@ -48,15 +48,18 @@ public class WeaponDataEditor : Editor
         {
             if (GUILayout.Button("Set number of attacks"))
                 foreach (var item in _data.ComponentsData)
-                {
                     item.InitializeAttackData(_data.NumberOfAttacks);
-                }
+
 
             if (GUILayout.Button("Set names for attacks"))
                 foreach (var item in _data.ComponentsData)
-                {
                     item.SetAttackDataNames();
-                }
+
+
+            if (GUILayout.Button("Set names for attacks phases"))
+                foreach (var item in _data.ComponentsData)
+                    item.SetAttackDataPhasesNames();
+
         }
     }
 

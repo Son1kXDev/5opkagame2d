@@ -10,7 +10,7 @@ namespace Enjine.Weapons
         public event Action OnEnter;
         public event Action OnExit;
 
-        [field: SerializeField, StatusIcon] public WeaponData Data { get; private set; }
+        public WeaponData Data { get; private set; }
         public GameObject BaseGameObject { get; private set; }
         public GameObject WeaponGameObject { get; private set; }
         public AnimationEventHandler EventHandler { get; private set; }
@@ -26,6 +26,9 @@ namespace Enjine.Weapons
             EventHandler ??= BaseGameObject.GetComponent<AnimationEventHandler>();
             _animator ??= BaseGameObject.GetComponent<Animator>();
         }
+
+        public void SetData(WeaponData data) => Data = data;
+
 
         public void Enter()
         {

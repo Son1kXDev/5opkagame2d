@@ -20,19 +20,18 @@ namespace Enjine.Weapons.Components
             _detected = Physics2D.OverlapBoxAll(_offset, _currentAttackData.HitBox.size, 0f, _data.DetectableLayers);
 
             if (_detected.Length != 0)
-                // TakeDamage();
                 OnDetectedCollider2D?.Invoke(_detected);
         }
 
-        protected override void OnEnable()
+        protected override void Start()
         {
-            base.OnEnable();
+            base.Start();
             EventHandler.OnAttackAction += HandleAttackAction;
         }
 
-        protected override void OnDisable()
+        protected override void OnDestroy()
         {
-            base.OnDisable();
+            base.OnDestroy();
             EventHandler.OnAttackAction -= HandleAttackAction;
         }
 

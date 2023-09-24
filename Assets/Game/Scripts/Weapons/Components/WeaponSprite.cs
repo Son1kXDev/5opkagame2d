@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using Enjine.Weapons.Components;
+using System.Linq;
 
 namespace Enjine.Weapons.Components
 {
@@ -9,34 +10,36 @@ namespace Enjine.Weapons.Components
         private SpriteRenderer _baseSpriteRenderer;
         private SpriteRenderer _weaponSpriteRenderer;
         private int _currentWeaponSpriteIndex;
+        private Sprite[] _currentPhaseSprites;
 
-
-        protected override void Awake()
+        protected override void Start()
         {
-            base.Awake();
+            base.Start();
 
-            _baseSpriteRenderer = transform.Find("Base").GetComponent<SpriteRenderer>();
-            _weaponSpriteRenderer = transform.Find("WeaponSprite").GetComponent<SpriteRenderer>();
-            // _baseSpriteRenderer = _weapon.BaseGameObject.GetComponent<SpriteRenderer>();
-            // _weaponSpriteRenderer = _weapon.WeaponGameObject.GetComponent<SpriteRenderer>();
-        }
+            _baseSpriteRenderer = _weapon.BaseGameObject.GetComponent<SpriteRenderer>();
+            _weaponSpriteRenderer = _weapon.WeaponGameObject.GetComponent<SpriteRenderer>();
 
-        protected override void OnEnable()
-        {
-            base.OnEnable();
             _baseSpriteRenderer.RegisterSpriteChangeCallback(HandleBaseSpriteChange);
+            EventHandler.OnEnterAttackPhase += HandleEnterAttackPhase;
         }
 
-        protected override void OnDisable()
+        protected override void OnDestroy()
         {
-            base.OnDisable();
+            base.OnDestroy();
             _baseSpriteRenderer.UnregisterSpriteChangeCallback(HandleBaseSpriteChange);
+            EventHandler.OnEnterAttackPhase -= HandleEnterAttackPhase;
         }
 
         protected override void HandleEnter()
         {
             base.HandleEnter();
             _currentWeaponSpriteIndex = 0;
+        }
+
+        private void HandleEnterAttackPhase(AttackPhases phase)
+        {
+            _currentWeaponSpriteIndex = 0;
+            _currentPhaseSprites = _currentAttackData.PhaseSprites.FirstOrDefault(data => data.Phase == phase).Sprites;
         }
 
         private void HandleBaseSpriteChange(SpriteRenderer sr)
@@ -47,7 +50,7 @@ namespace Enjine.Weapons.Components
                 return;
             }
 
-            _weaponSpriteRenderer.sprite = _currentAttackData.Sprites[_currentWeaponSpriteIndex];
+            _weaponSpriteRenderer.sprite = _currentPhaseSprites[_currentWeaponSpriteIndex];
             _currentWeaponSpriteIndex++;
         }
 

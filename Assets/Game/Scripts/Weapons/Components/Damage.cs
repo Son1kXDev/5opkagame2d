@@ -5,7 +5,6 @@ namespace Enjine.Weapons.Components
 {
     public class Damage : WeaponComponent<DamageData, AttackDamage>
     {
-
         private ActionHitBox _hitBox;
 
         private void HandleDetectCollider2D(Collider2D[] colliders)
@@ -14,7 +13,6 @@ namespace Enjine.Weapons.Components
                 if (item.TryGetComponent(out Health component))
                     component.TakeDamage(_currentAttackData.Amount);
         }
-
         protected override void Awake()
         {
             base.Awake();
@@ -22,15 +20,15 @@ namespace Enjine.Weapons.Components
             _hitBox = GetComponent<ActionHitBox>();
         }
 
-        protected override void OnEnable()
+        protected override void Start()
         {
-            base.OnEnable();
+            base.Start();
             _hitBox.OnDetectedCollider2D += HandleDetectCollider2D;
         }
 
-        protected override void OnDisable()
+        protected override void OnDestroy()
         {
-            base.OnDisable();
+            base.OnDestroy();
             _hitBox.OnDetectedCollider2D -= HandleDetectCollider2D;
         }
     }

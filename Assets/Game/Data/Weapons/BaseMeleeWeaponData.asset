@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b385a574a7542334abf2cc83ceb49940, type: 3}
-  m_Name: newWeaponData
+  m_Name: BaseMeleeWeaponData
   m_EditorClassIdentifier: 
+  <AnimatorController>k__BackingField: {fileID: 9100000, guid: 93cdd416a18d3564db0bcb05423e0e38, type: 2}
   <NumberOfAttacks>k__BackingField: 1
   <ComponentsData>k__BackingField:
   - rid: 3186190639849537545

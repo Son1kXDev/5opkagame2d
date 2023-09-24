@@ -8,5 +8,7 @@ namespace Enjine.Weapons.Components
         [SerializeField, HideInInspector] private string name;
 
         public void SetAttackName(int i) => name = $"Attack {i}";
+
+        public virtual void SetPhasesNames() { }
     }
 }

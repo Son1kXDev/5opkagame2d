@@ -10,12 +10,18 @@ namespace Enjine.Weapons
     [CreateAssetMenu(fileName = "newWeaponData", menuName = "Resources/Game/Weapon Data", order = 2)]
     public class WeaponData : ScriptableObject
     {
+        [field: SerializeField] public RuntimeAnimatorController AnimatorController { get; private set; }
         [field: SerializeField] public int NumberOfAttacks { get; private set; }
         [field: SerializeReference] public List<ComponentData> ComponentsData { get; private set; }
 
         public T GetData<T>()
         {
             return ComponentsData.OfType<T>().FirstOrDefault();
+        }
+
+        public List<Type> GetAllDependencies()
+        {
+            return ComponentsData.Select(component => component.ComponentDependency).ToList();
         }
 
         public void AddData(ComponentData data)

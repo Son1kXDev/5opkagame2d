@@ -9,9 +9,23 @@ namespace Enjine.Weapons.Components
         protected AnimationEventHandler EventHandler => _weapon.EventHandler;
         protected bool isAttackActive;
 
+        public virtual void Initialize() { }
+
         protected virtual void Awake()
         {
             _weapon = GetComponent<Weapon>();
+        }
+
+        protected virtual void Start()
+        {
+            _weapon.OnEnter += HandleEnter;
+            _weapon.OnExit += HandleExit;
+        }
+
+        protected virtual void OnDestroy()
+        {
+            _weapon.OnEnter -= HandleEnter;
+            _weapon.OnExit -= HandleExit;
         }
 
         protected virtual void HandleEnter()
@@ -24,17 +38,7 @@ namespace Enjine.Weapons.Components
             isAttackActive = false;
         }
 
-        protected virtual void OnEnable()
-        {
-            _weapon.OnEnter += HandleEnter;
-            _weapon.OnExit += HandleExit;
-        }
 
-        protected virtual void OnDisable()
-        {
-            _weapon.OnEnter -= HandleEnter;
-            _weapon.OnExit -= HandleExit;
-        }
     }
 
     public abstract class WeaponComponent<T1, T2> : WeaponComponent
@@ -51,9 +55,9 @@ namespace Enjine.Weapons.Components
             _currentAttackData = _data.AttackData[0];
         }
 
-        protected override void Awake()
+        public override void Initialize()
         {
-            base.Awake();
+            base.Initialize();
 
             _data = _weapon.Data.GetData<T1>();
         }
