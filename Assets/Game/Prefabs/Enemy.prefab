@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8df21afad1af5004694f554574fe2436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <EnemyConfig>k__BackingField: {fileID: 11400000, guid: aeb2b5703065a8648980288daf4843b8, type: 2}
+  <Data>k__BackingField: {fileID: 11400000, guid: aeb2b5703065a8648980288daf4843b8, type: 2}
   <PatrolPoints>k__BackingField:
   - {fileID: 7695779925739699918}
   - {fileID: 7695779927440441994}

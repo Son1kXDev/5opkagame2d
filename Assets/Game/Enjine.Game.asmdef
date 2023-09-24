@@ -1,0 +1,22 @@
+{
+    "name": "Enjine.Game",
+    "rootNamespace": "",
+    "references": [
+        "GUID:d5bb13d826fcadc458efda6f54638c3f",
+        "GUID:efa45043feb7e4147a305b73b5cea642",
+        "GUID:b1667c0b855ceec4bb420b7d742193d5",
+        "GUID:19e65f73cafdd28408ebfa608494ef37",
+        "GUID:abc30f71a829b6347b5d2bf83aa0235e",
+        "GUID:0c752da273b17c547ae705acf0f2adf2",
+        "GUID:75469ad4d38634e559750d17036d5f7c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

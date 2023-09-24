@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class HairColor : MonoBehaviour
+namespace Enjine
 {
-    [SerializeField, StatusIcon] private Material _hairMaterial;
-
-    public void SetHairColor(Color hairColor)
+    public class HairColor : MonoBehaviour
     {
-        _hairMaterial.SetColor("_HairColor", hairColor);
+        [SerializeField, StatusIcon] private Material _hairMaterial;
+
+        public void SetHairColor(Color hairColor)
+        {
+            _hairMaterial.SetColor("_HairColor", hairColor);
+        }
     }
 }

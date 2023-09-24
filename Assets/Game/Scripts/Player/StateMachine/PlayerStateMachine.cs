@@ -1,18 +1,21 @@
-public class PlayerStateMachine
+namespace Enjine
 {
-    public PlayerState CurrentPlayerState { get; private set; }
-
-    public void Initialize(PlayerState initialState)
+    public class PlayerStateMachine
     {
-        CurrentPlayerState = initialState;
-        CurrentPlayerState.EnterState();
-    }
+        public PlayerState CurrentPlayerState { get; private set; }
 
-    public void ChangeState(PlayerState newState)
-    {
-        CurrentPlayerState.ExitState();
-        CurrentPlayerState = newState;
-        CurrentPlayerState.EnterState();
-    }
+        public void Initialize(PlayerState initialState)
+        {
+            CurrentPlayerState = initialState;
+            CurrentPlayerState.EnterState();
+        }
 
+        public void ChangeState(PlayerState newState)
+        {
+            CurrentPlayerState.ExitState();
+            CurrentPlayerState = newState;
+            CurrentPlayerState.EnterState();
+        }
+
+    }
 }

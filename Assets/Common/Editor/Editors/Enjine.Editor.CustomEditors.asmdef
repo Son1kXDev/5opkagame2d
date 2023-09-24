@@ -1,0 +1,19 @@
+{
+    "name": "Enjine.Editor.CustomEditors",
+    "rootNamespace": "",
+    "references": [
+        "GUID:ce94c31b113b36744a8807c055d7edb8",
+        "GUID:b1667c0b855ceec4bb420b7d742193d5",
+        "GUID:abc30f71a829b6347b5d2bf83aa0235e",
+        "GUID:01dcc4af5eb3fa3408c87df7184277ea"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,33 +1,36 @@
-public class EnemyFollowState : EnemyState
+namespace Enjine
 {
-    public EnemyFollowState(Enemy enemy, EnemyStateMachine enemyStateMachine) : base(enemy, enemyStateMachine) { }
-
-    public override void EnterState()
+    public class EnemyFollowState : EnemyState
     {
-        Debug.Log("Entering Follow State");
-    }
-    public override void ExitState()
-    {
-        Debug.Log("Exiting Follow State");
-    }
-    public override void UpdateState()
-    {
-        if (PlayerInViewDistance() == false) _enemyStateMachine.ChangeState(_enemy.SearchState);
+        public EnemyFollowState(Enemy enemy, EnemyStateMachine enemyStateMachine) : base(enemy, enemyStateMachine) { }
 
-        if (PlayerInAttackDistance()) _enemyStateMachine.ChangeState(_enemy.AttackState);
+        public override void EnterState()
+        {
+            Debug.Log("Entering Follow State");
+        }
+        public override void ExitState()
+        {
+            Debug.Log("Exiting Follow State");
+        }
+        public override void UpdateState()
+        {
+            if (PlayerInViewDistance() == false) _enemyStateMachine.ChangeState(_enemy.SearchState);
 
-        if (_enemy.Seeker.IsDone()) _enemy.Seeker.StartPath(_enemy.Rigidbody.position, _enemy.Player.position, OnPathComplete);
-    }
+            if (PlayerInAttackDistance()) _enemyStateMachine.ChangeState(_enemy.AttackState);
 
-    public override void FixedUpdateState()
-    {
-        base.FixedUpdateState();
-    }
-    public override void AnimationTriggerEvent()
-    {
-        base.AnimationTriggerEvent();
-    }
+            if (_enemy.Seeker.IsDone()) _enemy.Seeker.StartPath(_enemy.Rigidbody.position, _enemy.Player.position, OnPathComplete);
+        }
 
+        public override void FixedUpdateState()
+        {
+            base.FixedUpdateState();
+        }
+        public override void AnimationTriggerEvent()
+        {
+            base.AnimationTriggerEvent();
+        }
+
+    }
 }
 
 

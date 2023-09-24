@@ -3,29 +3,31 @@ using System.Collections;
 using System.Collections.Generic;
 using NTC.Global.Cache;
 using UnityEngine;
-
-public class ParallaxBehaviour : MonoCache
+namespace Enjine
 {
-    [SerializeField, StatusIcon] private Transform _followingTarget;
-    [SerializeField, Range(0f, 1f)] private float _parallaxStrengthHorizontal = 0.1f;
-    [SerializeField, Range(0f, 1f)] private float _parallaxStrengthVertical = 0.1f;
-
-
-    private Vector3 _targetPreviousPosition;
-
-    private void Start()
+    public class ParallaxBehaviour : MonoCache
     {
-        if (!_followingTarget)
-            _followingTarget = Camera.main.transform;
+        [SerializeField, StatusIcon] private Transform _followingTarget;
+        [SerializeField, Range(0f, 1f)] private float _parallaxStrengthHorizontal = 0.1f;
+        [SerializeField, Range(0f, 1f)] private float _parallaxStrengthVertical = 0.1f;
 
-        _targetPreviousPosition = _followingTarget.position;
-    }
 
-    protected override void FixedRun()
-    {
-        Vector3 delta = _followingTarget.position - _targetPreviousPosition;
+        private Vector3 _targetPreviousPosition;
 
-        transform.position += new Vector3(delta.x * _parallaxStrengthHorizontal, delta.y * _parallaxStrengthVertical, 0);
-        _targetPreviousPosition = _followingTarget.position;
+        private void Start()
+        {
+            if (!_followingTarget)
+                _followingTarget = Camera.main.transform;
+
+            _targetPreviousPosition = _followingTarget.position;
+        }
+
+        protected override void FixedRun()
+        {
+            Vector3 delta = _followingTarget.position - _targetPreviousPosition;
+
+            transform.position += new Vector3(delta.x * _parallaxStrengthHorizontal, delta.y * _parallaxStrengthVertical, 0);
+            _targetPreviousPosition = _followingTarget.position;
+        }
     }
 }

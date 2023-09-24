@@ -2,76 +2,94 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
-
-
-public class Enemy : Health
+namespace Enjine
 {
-
-    [field: Header("Config")]
-    [field: SerializeField, StatusIcon] public EnemyConfig EnemyConfig { get; private set; }
-
-    [field: Header("Patrol System")]
-    [field: SerializeField] public List<Transform> PatrolPoints { get; private set; } = new List<Transform>();
-
-    public EnemyStateMachine StateMachine { get; private set; }
-    public EnemyPatrolState PatrolState { get; private set; }
-    public EnemyFollowState FollowState { get; private set; }
-    public EnemySearchState SearchState { get; private set; }
-    public EnemyAttackState AttackState { get; private set; }
-    public Transform Player { get; private set; }
-    public Rigidbody2D Rigidbody { get; private set; }
-    public Collider2D Collider { get; private set; }
-    public Path Path { get; set; }
-    public Seeker Seeker { get; private set; }
-
-    private void Awake() => InitializeEnemy();
-
-    public void InitializeEnemy()
+    public class Enemy : Health
     {
-        if (EnemyConfig == null)
-            throw new NullReferenceException("Enemy Config is null");
 
-        InitializeHealth(EnemyConfig.MaximumHealth);
+        [field: Header("Config")]
+        [field: SerializeField, StatusIcon] public EnemyData Data { get; private set; }
 
-        Seeker = GetComponent<Seeker>();
-        Rigidbody = GetComponent<Rigidbody2D>();
-        Collider = GetComponent<Collider2D>();
-        Player = GameObject.FindGameObjectWithTag("Player").transform;
+        [field: Header("Patrol System")]
+        [field: SerializeField] public List<Transform> PatrolPoints { get; private set; }
 
-        StateMachine = new EnemyStateMachine();
-        PatrolState = new EnemyPatrolState(this, StateMachine);
-        FollowState = new EnemyFollowState(this, StateMachine);
-        SearchState = new EnemySearchState(this, StateMachine);
-        AttackState = new EnemyAttackState(this, StateMachine);
+        public EnemyStateMachine StateMachine { get; private set; }
+        public EnemyPatrolState PatrolState { get; private set; }
+        public EnemyFollowState FollowState { get; private set; }
+        public EnemySearchState SearchState { get; private set; }
+        public EnemyAttackState AttackState { get; private set; }
+        public Transform Player { get; private set; }
+        public Rigidbody2D Rigidbody { get; private set; }
+        public Collider2D Collider { get; private set; }
+        public Path Path { get; set; }
+        public Seeker Seeker { get; private set; }
 
-        StateMachine.Initialize(PatrolState);
+        private void OnValidate()
+        {
+            PatrolPoints ??= new List<Transform>();
+            if (Seeker == null)
+                if (TryGetComponent(out Seeker _) == false)
+                    Seeker = gameObject.AddComponent(typeof(Seeker)) as Seeker;
+                else Seeker = GetComponent<Seeker>();
 
-        InvokeRepeating(nameof(UpdateEnemy), 0f, EnemyConfig.PathUpdateSeconds);
-    }
+            if (Rigidbody == null)
+                if (TryGetComponent(out Rigidbody2D _) == false)
+                    Rigidbody = gameObject.AddComponent(typeof(Rigidbody2D)) as Rigidbody2D;
+                else Rigidbody = GetComponent<Rigidbody2D>();
 
-    public void UpdateEnemy() => StateMachine.CurrentEnemyState.UpdateState();
+            if (Collider == null)
+                if (TryGetComponent(out Collider2D _) == false)
+                    Collider = gameObject.AddComponent(typeof(CircleCollider2D)) as Collider2D;
+                else Collider = GetComponent<Collider2D>();
+        }
 
-    protected override void FixedRun() => StateMachine.CurrentEnemyState.FixedUpdateState();
+        private void Awake() => InitializeEnemy();
 
-    protected override void VisualizeHealth()
-    {
-        Debug.SetColor(Color.blue);
-        Debug.Log("Taking damage! Current Health: " + _currentHealth);
-    }
+        public void InitializeEnemy()
+        {
+            if (Data == null)
+                throw new NullReferenceException("Enemy Config is null");
 
-    protected override void OnDeath()
-    {
-        Debug.Log("Enemy died!");
-    }
+            InitializeHealth(Data.MaximumHealth);
 
-    private void OnDrawGizmos()
-    {
-        if (EnemyConfig == null) return;
+            Player = GameObject.FindGameObjectWithTag("Player").transform;
 
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, EnemyConfig.ActivationDistance);
+            StateMachine = new EnemyStateMachine();
+            PatrolState = new EnemyPatrolState(this, StateMachine);
+            FollowState = new EnemyFollowState(this, StateMachine);
+            SearchState = new EnemySearchState(this, StateMachine);
+            AttackState = new EnemyAttackState(this, StateMachine);
 
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, EnemyConfig.AttackDistance);
+            StateMachine.Initialize(PatrolState);
+
+            InvokeRepeating(nameof(UpdateEnemy), 0f, Data.PathUpdateSeconds);
+        }
+
+        public void UpdateEnemy() => StateMachine.CurrentEnemyState.UpdateState();
+
+        protected override void FixedRun() => StateMachine.CurrentEnemyState.FixedUpdateState();
+
+        protected override void VisualizeHealth()
+        {
+            Debug.SetColor(Color.blue);
+            Debug.Log("Taking damage! Current Health: " + _currentHealth);
+        }
+
+        protected override void OnDeath()
+        {
+            Destroy(transform.parent.gameObject);
+            Debug.Log("Enemy died!");
+        }
+
+        private void OnDrawGizmos()
+        {
+            if (Data == null) return;
+
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireSphere(transform.position, Data.ActivationDistance);
+
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(transform.position, Data.AttackDistance);
+        }
     }
 }
