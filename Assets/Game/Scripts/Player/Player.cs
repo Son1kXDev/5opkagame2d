@@ -119,7 +119,7 @@ namespace Enjine
         protected override void OnDeath()
         {
             Debug.Log("Player died!");
-            gameObject.SetActive(false);
+            SceneLoadManager.Instance.ReloadCurrentScene();
         }
     }
 }

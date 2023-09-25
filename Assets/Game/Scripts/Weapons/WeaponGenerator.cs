@@ -1,11 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Enjine.Weapons;
 using Enjine.Weapons.Components;
 using UnityEngine;
 
-namespace Enjine.Assets.Weapons
+namespace Enjine.Weapons
 {
     public class WeaponGenerator : MonoBehaviour
     {
