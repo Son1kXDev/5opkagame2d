@@ -43,7 +43,10 @@ MonoBehaviour:
         name: WeaponSpriteData
         _attackData:
         - name: Attack 1
-          <Sprites>k__BackingField: []
+          <PhaseSprites>k__BackingField:
+          - Name: Action
+            <Phase>k__BackingField: 2
+            <Sprites>k__BackingField: []
     - rid: 3186190639849537554
       type: {class: DamageData, ns: Enjine.Weapons.Components, asm: Enjine.Game}
       data:
