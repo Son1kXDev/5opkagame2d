@@ -8,5 +8,7 @@ namespace Enjine
     {
         [field: SerializeField, StatusIcon(minValue: 0)] public int MaximumHealth { get; private set; } = 100;
         [field: SerializeField, StatusIcon(minValue: 0f)] public float WalkSpeed { get; private set; } = 20f;
+
+        [field: SerializeField, StatusIcon] public Material[] HairMaterials {get; private set; }
     }
 }
