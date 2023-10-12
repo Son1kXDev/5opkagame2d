@@ -1,8 +1,6 @@
-﻿using UnityEditor;
-using UnityEngine;
-
-namespace Enjine.Data
+﻿namespace Enjine.Data
 {
+
     public interface ISettingsDataPersistence
     {
         void LoadData(SettingsData data);

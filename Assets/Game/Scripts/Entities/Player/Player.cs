@@ -1,12 +1,13 @@
 using System;
 using UnityEngine;
 using Enjine.Weapons;
+using Enjine.Data;
 
 namespace Enjine
 {
     public enum PlayerAnimationTrigger { Idle, Attack, Walk, Jump, Falling, Crouch, Dead }
 
-    public class Player : Health
+    public class Player : Health, Data.IDataPersistence
     {
         public static Player Instance => _instance;
         private static Player _instance;
@@ -120,6 +121,23 @@ namespace Enjine
         {
             Debug.Log("Player died!");
             SceneLoadManager.Instance.ReloadCurrentScene();
+        }
+
+        public void LoadData(object data)
+        {
+            GameData game = data as GameData;
+
+            transform.position = game.CurrentPlayerPosition;
+            Debug.Log("Nickname: " + game.NickName);
+            Debug.Log("Current progress: " + game.CurrentProgress);
+        }
+
+        public void SaveData(object data)
+        {
+            GameData game = (GameData)data;
+            game.CurrentPlayerPosition = transform.position;
+
+            data = game;
         }
     }
 }

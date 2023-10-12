@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-
 namespace Enjine.Data
 {
     [System.Serializable]
