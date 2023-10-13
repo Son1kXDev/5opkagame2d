@@ -1,5 +1,5 @@
 ﻿
-namespace Enjine.Data
+namespace Enjine.Data.SaveLoadSystem
 {
 
     public interface IDataPersistence

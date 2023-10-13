@@ -3,7 +3,7 @@ using System.Linq;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 
-namespace Enjine.Data
+namespace Enjine.Data.SaveLoadSystem
 {
     public class DataPersistenceManager : MonoBehaviour
     {

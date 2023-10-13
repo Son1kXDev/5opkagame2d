@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Enjine.Data
+namespace Enjine.Data.SaveLoadSystem
 {
     public class ApplicationData : MonoBehaviour, IDataPersistence
     {

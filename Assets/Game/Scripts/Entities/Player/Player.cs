@@ -1,13 +1,13 @@
 using System;
 using UnityEngine;
 using Enjine.Weapons;
-using Enjine.Data;
+using Enjine.Data.SaveLoadSystem;
 
 namespace Enjine
 {
     public enum PlayerAnimationTrigger { Idle, Attack, Walk, Jump, Falling, Crouch, Dead }
 
-    public class Player : Health, Data.IDataPersistence
+    public class Player : Health, IDataPersistence
     {
         public static Player Instance => _instance;
         private static Player _instance;

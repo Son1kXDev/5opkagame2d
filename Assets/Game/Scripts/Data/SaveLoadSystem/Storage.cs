@@ -3,7 +3,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using System.IO;
 
-namespace Enjine.Data
+namespace Enjine.Data.SaveLoadSystem
 {
     public class Storage
     {

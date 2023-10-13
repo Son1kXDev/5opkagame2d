@@ -1,7 +1,7 @@
 using System.Runtime.Serialization;
 using UnityEngine;
 
-namespace Enjine.Data
+namespace Enjine.Data.SaveLoadSystem
 {
     public class Vector3SerializationSurrogate : ISerializationSurrogate
     {

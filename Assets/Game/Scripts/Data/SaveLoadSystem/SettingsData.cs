@@ -1,4 +1,4 @@
-namespace Enjine.Data
+namespace Enjine.Data.SaveLoadSystem
 {
     [System.Serializable]
     public class SettingsData
