@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 782f4098d9bf64bfb8437dd475d8cae8, type: 3}
   m_Name: TestItem
   m_EditorClassIdentifier: 
-  <ID>k__BackingField: 
-  <Title>k__BackingField: 
-  <Description>k__BackingField: 
-  <StackSize>k__BackingField: 0
-  <Icon>k__BackingField: {fileID: 0}
+  <ID>k__BackingField: test_item
+  <Title>k__BackingField: Test
+  <Description>k__BackingField: This is a test item
+  <StackSize>k__BackingField: 5
+  <Icon>k__BackingField: {fileID: -512151239, guid: aa3945685b1ff471ab099384fd94bc67, type: 3}
