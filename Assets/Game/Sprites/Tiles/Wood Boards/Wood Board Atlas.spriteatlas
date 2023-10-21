@@ -46,6 +46,7 @@ SpriteAtlas:
     packables:
     - {fileID: 2800000, guid: 6ea4d8cffeab24041aa84c6cc2a9e5d6, type: 3}
     - {fileID: 2800000, guid: 669a24f32361d4c438d26b10ae0fc0cb, type: 3}
+    - {fileID: 2800000, guid: 8247e50e82ae64befbbae2ce31fb57ee, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -75,6 +76,10 @@ SpriteAtlas:
   - {fileID: 1881349096, guid: 669a24f32361d4c438d26b10ae0fc0cb, type: 3}
   - {fileID: 365902558, guid: 669a24f32361d4c438d26b10ae0fc0cb, type: 3}
   - {fileID: 2073972658, guid: 669a24f32361d4c438d26b10ae0fc0cb, type: 3}
+  - {fileID: -1310425695, guid: 8247e50e82ae64befbbae2ce31fb57ee, type: 3}
+  - {fileID: -25238412, guid: 8247e50e82ae64befbbae2ce31fb57ee, type: 3}
+  - {fileID: 1097788994, guid: 8247e50e82ae64befbbae2ce31fb57ee, type: 3}
+  - {fileID: -304564698, guid: 8247e50e82ae64befbbae2ce31fb57ee, type: 3}
   - {fileID: 1734230951, guid: 6ea4d8cffeab24041aa84c6cc2a9e5d6, type: 3}
   - {fileID: -1452809986, guid: 6ea4d8cffeab24041aa84c6cc2a9e5d6, type: 3}
   - {fileID: -331729345, guid: 6ea4d8cffeab24041aa84c6cc2a9e5d6, type: 3}
@@ -108,6 +113,10 @@ SpriteAtlas:
   - tile wood boards 2_21
   - tile wood boards 2_22
   - tile wood boards 2_23
+  - tile wood boards 2_13
+  - tile wood boards 2_12
+  - tile wood boards 2_19
+  - tile wood boards 2_18
   - tile wood boards 1_0
   - tile wood boards 1_7
   - tile wood boards 1_6

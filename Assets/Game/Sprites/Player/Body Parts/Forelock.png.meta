@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f99c228716fbe4b7d9a97175d6c2a75b
+guid: 6efb23a2f79e24ef0b9942d9d588b0bc
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,85 +117,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Body_0
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 6
-        width: 19
-        height: 6
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
-      border: {x: 6, y: 1, z: 1, w: 2}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 288cd085ba60b4bf8b381af0cc425142
-      internalID: -1223583539
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Body_1
-      rect:
-        serializedVersion: 2
-        x: 21
-        y: 7
-        width: 19
-        height: 5
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0cfe82c6e07584890821a52d8d7c5025
-      internalID: -754884954
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Body_2
+      name: Hair_2_0
       rect:
         serializedVersion: 2
         x: 1
         y: 1
-        width: 19
-        height: 4
+        width: 20
+        height: 13
       alignment: 2
       pivot: {x: 0.5, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 7, y: 4, z: 1, w: 7}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1aa19828203d04a3493c78d5a687e537
-      internalID: -1410938015
+      spriteID: fa10fd521d69e4bf192f41ada4ea77e0
+      internalID: 1949084181
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Body_3
+      name: Hair_2_1
       rect:
         serializedVersion: 2
-        x: 21
+        x: 23
         y: 1
-        width: 19
-        height: 3
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+        width: 21
+        height: 13
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 1, y: 4, z: 7, w: 7}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e00dba67a8fc3465fa05f471105bdd49
-      internalID: -1438831930
+      spriteID: e861da7857bf045fabecd3bf34be9af4
+      internalID: -1985320582
       vertices: []
       indices: 
       edges: []
@@ -211,10 +169,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Body_1: -754884954
-      Body_3: -1438831930
-      Body_2: -1410938015
-      Body_0: -1223583539
+      Hair_2_1: -1985320582
+      Hair_2_0: 1949084181
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f99c228716fbe4b7d9a97175d6c2a75b
+guid: 8bd29dae5308e4da682daf47976760b1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -67,7 +67,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 128
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -117,85 +117,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Body_0
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 6
-        width: 19
-        height: 6
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
-      border: {x: 6, y: 1, z: 1, w: 2}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 288cd085ba60b4bf8b381af0cc425142
-      internalID: -1223583539
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Body_1
-      rect:
-        serializedVersion: 2
-        x: 21
-        y: 7
-        width: 19
-        height: 5
-      alignment: 2
-      pivot: {x: 0.5, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0cfe82c6e07584890821a52d8d7c5025
-      internalID: -754884954
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Body_2
+      name: Mouth_0
       rect:
         serializedVersion: 2
         x: 1
         y: 1
-        width: 19
+        width: 7
         height: 4
       alignment: 2
       pivot: {x: 0.5, y: 1}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 2, y: 1, z: 2, w: 1}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1aa19828203d04a3493c78d5a687e537
-      internalID: -1410938015
+      spriteID: fed7e372f02a4486faa3fb20d35e5ce5
+      internalID: -537044150
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Body_3
+      name: Mouth_1
       rect:
         serializedVersion: 2
-        x: 21
+        x: 9
         y: 1
-        width: 19
-        height: 3
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+        width: 7
+        height: 4
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 1, y: 1, z: 1, w: 1}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e00dba67a8fc3465fa05f471105bdd49
-      internalID: -1438831930
+      spriteID: 7146d9a90753e41c6b5d5ac6dc134f4d
+      internalID: 113288792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mouth_2
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 1
+        width: 7
+        height: 4
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 2, y: 1, z: 2, w: 2}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84682437d3fd5435eb4e518e6a29646d
+      internalID: -423836987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mouth_3
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 1
+        width: 7
+        height: 4
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 2, y: 2, z: 2, w: 1}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95f6b63b2c9b245e2beb2c0c2162b046
+      internalID: -327144569
       vertices: []
       indices: 
       edges: []
@@ -211,10 +211,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Body_1: -754884954
-      Body_3: -1438831930
-      Body_2: -1410938015
-      Body_0: -1223583539
+      Mouth_3: -327144569
+      Mouth_1: 113288792
+      Mouth_0: -537044150
+      Mouth_2: -423836987
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
