@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{cdc8a5c7-5a76-4056-909e-9a72a0a0efcc}">
+		<property name="color">
+			<value>Red Light 1</value>
+		</property>
 		<property name="assetPath">
 			<value>SFX/Footsteps/Wood Footsteps.mp3</value>
 		</property>

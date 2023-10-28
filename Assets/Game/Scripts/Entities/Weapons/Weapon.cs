@@ -43,6 +43,9 @@ namespace Enjine.Weapons
 
             _animator.SetBool("active", true);
             OnEnter?.Invoke();
+
+            //delete on build:
+            Exit();
         }
 
         private void Exit()

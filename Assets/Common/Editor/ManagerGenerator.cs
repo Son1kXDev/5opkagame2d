@@ -18,20 +18,43 @@ namespace Enjine.Plugins
                 return;
             }
 
-            GameObject uiManager = new();
-            Undo.RegisterCreatedObjectUndo(uiManager, "Create UIManager");
-            uiManager.name = "UIManager";
-            uiManager.AddComponent(typeof(UIManager));
+            CreateManager(typeof(UIManager));
+        }
+
+        [MenuItem("GameObject/Managers/AudioManager", priority = 0)]
+        private static void CreateAudioManager()
+        {
+            if (IsAnyInstanceOfObject(typeof(AudioManager)))
+            {
+                Debug.LogError("AudioManager already exists on this scene");
+                return;
+            }
+
+            var secondaryTypes = new Type[] { typeof(AudioDatabase) };
+            CreateManager(typeof(AudioManager), secondaryTypes);
+        }
+
+        private static void CreateManager(Type managerType, Type[] secondaryTypes = null)
+        {
+            GameObject newManager = new();
+            Undo.RegisterCreatedObjectUndo(newManager, "Create " + managerType.Name);
+            newManager.name = managerType.Name;
+            newManager.AddComponent(managerType);
+            if (secondaryTypes != null)
+                foreach (Type type in secondaryTypes)
+                    newManager.AddComponent(type);
             CheckLayer("Organize");
-            uiManager.layer = LayerMask.NameToLayer("Organize");
-            uiManager.isStatic = true;
-            Selection.activeGameObject = uiManager;
+            newManager.layer = LayerMask.NameToLayer("Organize");
+            newManager.isStatic = true;
+            Selection.activeGameObject = newManager;
         }
 
         private static bool IsAnyInstanceOfObject(Type type)
         {
-            var objectsOfTypeInScene = Resources.FindObjectsOfTypeAll(type);
-            return objectsOfTypeInScene != null || objectsOfTypeInScene.Length != 0;
+            var objectOfTypeInScene = GameObject.FindFirstObjectByType(type);
+            // var objectsOfTypeInScene = Resources.FindObjectsOfTypeAll(type);
+            // return objectsOfTypeInScene != null || objectsOfTypeInScene.Length != 0;
+            return objectOfTypeInScene != null;
         }
 
         private static void CheckLayer(string name)

@@ -51,7 +51,7 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "5orka.sln",
+    "dotnet.defaultSolution": "5opkagame2d.sln",
     "[csharp]": {
         "editor.formatOnSave": true
     },

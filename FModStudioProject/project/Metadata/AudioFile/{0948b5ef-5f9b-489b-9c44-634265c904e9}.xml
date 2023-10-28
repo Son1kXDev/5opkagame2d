@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="AudioFile" id="{0948b5ef-5f9b-489b-9c44-634265c904e9}">
+		<property name="color">
+			<value>Green</value>
+		</property>
 		<property name="assetPath">
 			<value>SFX/Footsteps/Grass Footsteps.mp3</value>
 		</property>

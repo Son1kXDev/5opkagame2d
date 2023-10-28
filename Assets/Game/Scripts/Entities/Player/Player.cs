@@ -7,6 +7,8 @@ namespace Enjine
 {
     public enum PlayerAnimationTrigger { Idle, Attack, Walk, Jump, Falling, Crouch, Dead }
 
+    public enum AudioZone { Grass, Wood, Stone }
+
     public class Player : Health, IDataPersistence
     {
         public static Player Instance => _instance;
@@ -21,6 +23,9 @@ namespace Enjine
         public PlayerWalkState WalkState { get; private set; }
         public PlayerAttackState AttackState { get; private set; }
 
+        public AudioZone CurrentAudioZone { get; private set; }
+
+        public bool EnteredSoundTrigger { get; private set; }
         public bool IsCrouching { get; private set; }
         public bool IsJumping { get; set; }
         public Animator PlayerAnimator { get; private set; }
@@ -122,6 +127,25 @@ namespace Enjine
             Debug.Log("Player died!");
             SceneLoadManager.Instance.ReloadCurrentScene();
         }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag("SoundTrigger"))
+            {
+                EnteredSoundTrigger = true;
+
+                Debug.Log(other.name);
+
+                if (other.name.ToLower().Contains("grass"))
+                    CurrentAudioZone = AudioZone.Grass;
+                if (other.name.ToLower().Contains("wood"))
+                    CurrentAudioZone = AudioZone.Wood;
+                if (other.name.ToLower().Contains("stone"))
+                    CurrentAudioZone = AudioZone.Stone;
+            }
+        }
+
+        public void ResetSoundTrigger() => EnteredSoundTrigger = false;
 
         public void LoadData(object data)
         {
