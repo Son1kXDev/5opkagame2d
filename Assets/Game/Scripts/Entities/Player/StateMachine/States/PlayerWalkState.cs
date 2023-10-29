@@ -20,6 +20,8 @@ namespace Enjine
 
             _updateStateCooldown = 0;
 
+            _playerFootsteps.setParameterByName("Footsteps Zone", (int)_player.CurrentAudioZone);
+
             if (_player.CharacterController.Grounded && _player.IsJumping == false && _player.IsCrouching == false)
                 _player.PlayerAnimator.Play("Walk");
         }

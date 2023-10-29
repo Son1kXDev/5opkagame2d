@@ -48,6 +48,8 @@ namespace Enjine
 
         private void Start() => InitializePlayer();
 
+        public void SetAudioZone(AudioZone audioZone) => CurrentAudioZone = audioZone;
+
         public void InitializePlayer()
         {
             if (Data == null) throw new NullReferenceException("Player config is null");
