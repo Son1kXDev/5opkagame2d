@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{93727646-1ae1-4e17-8a59-e6c773b4a686}">
+		<property name="assetPath">
+			<value>SFX/Footsteps/Stone Footsteps/11-Stone Footsteps.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.3395918367346939</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{64f3919e-7895-463e-adf0-6eaca0164fdc}</destination>
+		</relationship>
+	</object>
+</objects>

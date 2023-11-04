@@ -18,6 +18,11 @@ namespace Enjine
         public InputControls InputControls { get; private set; }
         public CharacterController2D CharacterController { get; private set; }
 
+        public Action<bool> OnCrouchEvent;
+        public Action<bool> OnRunEvent;
+        public Action OnJumpEvent;
+        public Action OnAttackEvent;
+
         public PlayerStateMachine StateMachine { get; private set; }
         public PlayerIdleState IdleState { get; private set; }
         public PlayerWalkState WalkState { get; private set; }
@@ -82,6 +87,7 @@ namespace Enjine
             {
                 IsJumping = true;
                 StateMachine.CurrentPlayerState.AnimationTriggerEvent(PlayerAnimationTrigger.Jump);
+                OnJumpEvent?.Invoke();
             }
         }
 
@@ -91,6 +97,7 @@ namespace Enjine
             {
                 IsCrouching = true;
                 PlayerAnimator.SetBool("Crouch", true);
+                OnCrouchEvent?.Invoke(true);
             }
         }
 
@@ -98,11 +105,13 @@ namespace Enjine
         {
             IsCrouching = false;
             PlayerAnimator.SetBool("Crouch", false);
+            OnCrouchEvent?.Invoke(false);
         }
 
         private void Attack()
         {
             StateMachine.ChangeState(AttackState);
+            OnAttackEvent?.Invoke();
         }
 
         public void SetInput(bool value)

@@ -887,13 +887,48 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85eb0bebbe144fc290db8bdc2a27b06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <PlayerFootsteps>k__BackingField:
+  <PlayerFootstepsWalk>k__BackingField:
     Guid:
       Data1: -1587593421
       Data2: 1323612331
       Data3: 2070668702
       Data4: 1929394598
-    Path: event:/SFX/Footsteps/PlayerFootsteps
+    Path: event:/SFX/Player/Footsteps/PlayerFootstepsWalk
+  <PlayerFootstepsRun>k__BackingField:
+    Guid:
+      Data1: 1498117816
+      Data2: 1333682368
+      Data3: 1373847209
+      Data4: 2056637894
+    Path: event:/SFX/Player/Footsteps/PlayerFootstepsRun
+  <PlayerFootstepsCrouch>k__BackingField:
+    Guid:
+      Data1: -2070952134
+      Data2: 1240085571
+      Data3: -405396595
+      Data4: -1751234684
+    Path: event:/SFX/Player/Footsteps/PlayerFootstepsCrouch
+  <PlayerJumpGrass>k__BackingField:
+    Guid:
+      Data1: -232535637
+      Data2: 1262754813
+      Data3: -2011545472
+      Data4: -1164349986
+    Path: event:/SFX/Player/PlayerJumpGrass
+  <PlayerJumpStone>k__BackingField:
+    Guid:
+      Data1: -1982356408
+      Data2: 1272813049
+      Data3: -119765875
+      Data4: -618558238
+    Path: event:/SFX/Player/PlayerJumpStone
+  <PlayerJumpWood>k__BackingField:
+    Guid:
+      Data1: 1465894378
+      Data2: 1218979219
+      Data3: -2017971059
+      Data4: 1512105915
+    Path: event:/SFX/Player/PlayerJumpWood
 --- !u!114 &207541666
 MonoBehaviour:
   m_ObjectHideFlags: 0
